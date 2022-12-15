@@ -1,5 +1,4 @@
-﻿using System;
-using System.Data;
+﻿using System.Data;
 using NSubstitute;
 using Starter.SampleModels;
 using Xunit;
@@ -8,11 +7,11 @@ namespace Starter.Tests
 {
     public class CreateUserShould
     {
-        private IUserRepository _userRepository;
-        private CreateUser _createUser;
-        private IOutBoxRepository _outBoxRepository;
-        private IDbConnection _idbConnection;
-        private IDbTransaction _dbTransaction;
+        private readonly IUserRepository _userRepository;
+        private readonly CreateUser _createUser;
+        private readonly IOutBoxRepository _outBoxRepository;
+        private readonly IDbConnection _idbConnection;
+        private readonly IDbTransaction _dbTransaction;
 
         public CreateUserShould()
         {
@@ -30,7 +29,7 @@ namespace Starter.Tests
             
             _createUser.Execute();
             
-            _userRepository.Received(1).SaveUser(Arg.Any<User>(), _dbTransaction);
+            _userRepository.Received(1).Save(Arg.Any<User>(), _dbTransaction);
         }
 
         [Fact]
@@ -40,7 +39,7 @@ namespace Starter.Tests
             
             _createUser.Execute();
             
-            _outBoxRepository.Received(1).SaveEvent(Arg.Any<OutboxRecord>(), _dbTransaction);
+            _outBoxRepository.Received(1).Save(Arg.Any<OutboxRecord>(), _dbTransaction);
             _dbTransaction.Received(1).Commit();
         }
         

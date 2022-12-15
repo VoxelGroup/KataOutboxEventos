@@ -4,6 +4,6 @@ namespace Starter
 {
     public interface IUserRepository
     {
-        void SaveUser(User user, IDbTransaction dbTransaction);
+        void Save(User user, IDbTransaction dbTransaction);
     }
 }

@@ -23,8 +23,8 @@ namespace Starter
 
             using (var transaction = _idbConnection.BeginTransaction())
             {
-                _userRepository.SaveUser(user, transaction);
-                _outBoxRepository.SaveEvent(outboxRecord, transaction);
+                _userRepository.Save(user, transaction);
+                _outBoxRepository.Save(outboxRecord, transaction);
                 
                 transaction.Commit();
             }

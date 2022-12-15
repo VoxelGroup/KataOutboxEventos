@@ -5,6 +5,6 @@ namespace Starter
 {
     public interface IOutBoxRepository
     {
-        void SaveEvent(OutboxRecord any, IDbTransaction dbTransaction);
+        void Save(OutboxRecord any, IDbTransaction dbTransaction);
     }
 }
