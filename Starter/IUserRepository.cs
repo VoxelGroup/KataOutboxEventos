@@ -1,4 +1,4 @@
-﻿namespace Starter.Tests
+﻿namespace Starter
 {
     public interface IUserRepository
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace Starter.Tests.SampleModels
+namespace Starter.SampleModels
 {
     public class OutboxRecord
     {

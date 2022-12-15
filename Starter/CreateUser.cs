@@ -1,4 +1,4 @@
-namespace Starter.Tests
+namespace Starter
 {
     public class CreateUser
     {
@@ -9,9 +9,10 @@ namespace Starter.Tests
             _userRepository = userRepository;   
         }
 
-        public void Execute()   
+        public void Execute()
         {
-            throw new System.NotImplementedException();
+            var user = new User();
+            _userRepository.SaveUser(user);
         }
     }
 }
