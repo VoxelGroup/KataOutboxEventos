@@ -52,5 +52,6 @@ namespace Starter.Tests
             insertedRow.Id.Should().Be(1);
             insertedRow.EventId.Should().Be(sampleEvent.Id);
         }
+        
     }
 }
